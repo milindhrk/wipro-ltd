@@ -1,0 +1,10 @@
+#about{
+    background-color: darkslategray;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+}
+.hello{
+    color:red
+}
+.hello1{font-size:25px}

@@ -1,0 +1,84 @@
+<h1>Contact us</h1>
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+
+    <h5 *ngIf="success">Your form is valid!</h5>
+
+    <label>
+      Name:
+      <input type="text" formControlName="name">
+      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+      </div>
+    </label>
+  
+    <label>
+      Message:
+      <textarea formControlName="message"></textarea>
+      <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
+        <div *ngIf="messageForm.controls.message.errors.required">A message is required</div>
+      </div>
+    </label>
+
+    <input type="submit" value="Send message" class="cta">
+  
+  </form>
+
+  <div *ngIf="submitted" class="results">
+    <strong>Name:</strong> 
+    <span>{{ messageForm.controls.name.value }}</span>
+
+    <strong>Message:</strong> 
+    <span>{{ messageForm.controls.message.value }}</span>
+  </div>
+<br>
+<br>
+<br>
+<h1>Angular 8 pipes</h1>
+
+<p>Pipes are used to transform data. It is denoted by the symbol | 
+  Pipes are intergers, strings, array and date as input seperated 
+  |. It transforms the data in the format as required and displays
+  the same in the browser.
+</p>
+<br><br>
+<h1>Uppercase pipe & lowercase pipe</h1>
+<br>
+<h1>{{title | uppercase }}</h1>
+<h1>{{title | lowercase }}</h1>
+
+<h1>currency</h1>
+
+<h1>{{'Milindh' | lowercase }}</h1>
+<h1>{{ 75000.55 | currency:"USD"}}</h1><BR>
+<h1>{{ 75000.55 | currency:"INR"}}</h1><BR>
+
+  <h1>percent</h1>
+
+<h1>{{ 00.6758 | percent}}</h1><BR>
+
+  <h1>Date pipe</h1>
+  <h1>{{todaydate}}</h1>
+  <h1>{{todaydate | date: 'd/m/y'}}</h1>
+  <h1>{{todaydate | date: 'shortTime'}}</h1>
+
+  <h1>Decimal pipe</h1>
+  
+  <h1>{{454.789657068720 | number: '3.4-4'}}</h1><br>
+  <!--3 is min num before the '.'and 4-4 is min and max num after the '.'-->
+
+  <h1>{{454.789657068720 | number: '5.1-2'}}</h1><br>
+
+  <h1>JSON Pipe</h1>
+  <strong>
+    {{jsonval | json}}
+  </strong>
+  <br><br>
+  <h1>Slice Pipe</h1>
+  <strong>
+    {{months | slice: 2:6}}
+  </strong>
+
+
+  
+
